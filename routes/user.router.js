@@ -5,7 +5,7 @@ import User from "../schemas/user.schema.js"
 router.get("/", async(req,res)=> {
     try{
         let userlist = await User.find()
-        return res.send(userlist)
+        return res.json(userlist)
     }
 catch(error){
     res.status(500).json({message: error.message})
